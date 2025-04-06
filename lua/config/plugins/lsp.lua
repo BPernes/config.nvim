@@ -10,9 +10,6 @@ return {
           },
         },
       },
-      { 'williamboman/mason.nvim', opts = {} },
-      'williamboman/mason-lspconfig.nvim',
-      'WhoIsSethDaniel/mason-tool-installer.nvim',
     },
     "neovim/nvim-lspconfig",
     config = function()
@@ -20,6 +17,10 @@ return {
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       require("lspconfig").lua_ls.setup {}
+
+      require("lspconfig").cssls.setup {
+        capabilities = capabilities
+      }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
@@ -37,10 +38,6 @@ return {
           end
         end,
       })
-
-      require("lspconfig").cssls.setup {
-        capabilities = capabilities
-      }
     end
   }
 }
