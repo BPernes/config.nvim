@@ -16,6 +16,9 @@ return {
     },
     "neovim/nvim-lspconfig",
     config = function()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+
       require("lspconfig").lua_ls.setup {}
 
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -34,6 +37,10 @@ return {
           end
         end,
       })
+
+      require("lspconfig").cssls.setup {
+        capabilities = capabilities
+      }
     end
   }
 }
