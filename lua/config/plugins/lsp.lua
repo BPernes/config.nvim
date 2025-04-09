@@ -17,10 +17,7 @@ return {
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       require("lspconfig").lua_ls.setup {}
-
-      require("lspconfig").cssls.setup {
-        capabilities = capabilities
-      }
+      require 'lspconfig'.ts_ls.setup {}
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
