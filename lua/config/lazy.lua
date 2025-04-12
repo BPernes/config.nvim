@@ -21,7 +21,6 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    { "bluz71/vim-moonfly-colors", config = function() vim.cmd.colorscheme "moonfly" end },
     { import = "config.plugins" },
   }
 })
