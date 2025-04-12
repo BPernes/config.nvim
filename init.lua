@@ -5,8 +5,11 @@ vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- QuickFix nav
 vim.keymap.set("n", "<C-A-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-A-k>", "<cmd>cprev<CR>")
+
+vim.keymap.set("n", "<space>v", "<cmd>vsplit<CR>")
 
 --Global settings
 vim.opt.shiftwidth = 4
