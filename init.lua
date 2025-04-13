@@ -3,7 +3,7 @@ require("config.lazy")
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", "<cmd>:e .<CR>")
 
 -- QuickFix nav
 vim.keymap.set("n", "<C-A-j>", "<cmd>cnext<CR>")
