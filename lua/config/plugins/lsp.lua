@@ -18,6 +18,7 @@ return {
 
       require("lspconfig").lua_ls.setup {}
       require 'lspconfig'.ts_ls.setup {}
+      require 'lspconfig'.tailwindcss.setup {}
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
@@ -35,6 +36,18 @@ return {
           end
         end,
       })
+
+      vim.keymap.set('n', '<space>dg', function()
+        -- Show diagnostics in a floating window
+        vim.diagnostic.open_float(nil, {
+          focusable = false,
+          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+          border = 'rounded',
+          source = 'always',
+          prefix = ' ',
+          scope = 'cursor',
+        })
+      end, { desc = 'Show diagnostic under cursor' })
     end
   }
 }
