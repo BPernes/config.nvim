@@ -11,7 +11,7 @@ vim.keymap.set("n", "<C-A-k>", "<cmd>cprev<CR>")
 
 vim.keymap.set("n", "<space>v", "<cmd>vsplit<CR>")
 vim.keymap.set("n", "<space>w", "<cmd>:w<CR>")
-vim.keymap.set("n", "-", "<cmd>Oil<CR>")
+vim.keymap.set("n", "-", "<cmd>Ex<CR>")
 
 --Global settings
 vim.opt.shiftwidth = 4
