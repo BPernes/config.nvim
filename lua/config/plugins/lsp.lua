@@ -19,6 +19,7 @@ return {
       require("lspconfig").lua_ls.setup {}
       require 'lspconfig'.ts_ls.setup {}
       require 'lspconfig'.tailwindcss.setup {}
+      require 'lspconfig'.css_variables.setup {}
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
